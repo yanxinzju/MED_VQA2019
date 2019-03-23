@@ -119,3 +119,10 @@ def answer2num(answer_batch,answer_set):
             answer_num.append(answer_set.index('unknow'))
     return answer_num
 
+def load_last_ckpt(mode):
+    max=-1
+    for file in os.listdir('../log/'+mode):
+        temp=int(file.split('_')[1].split('.')[0])
+        if temp>max:
+            max=temp
+    return max

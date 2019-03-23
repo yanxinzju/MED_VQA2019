@@ -92,8 +92,6 @@ def Modality_val(ckpt_id):
         out=model(question,image_feature)
         loss=criterion(out,answer)
         predict=torch.argmax(out,1)
-        print(predict)
-        print(answer)
         print('\n')
         acc=torch.sum(predict==answer)
         total_acc+=acc.item()
